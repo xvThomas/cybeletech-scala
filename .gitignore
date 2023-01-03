@@ -1,0 +1,5 @@
+.idea
+target/
+.bsp
+logs/
+personal.conf
