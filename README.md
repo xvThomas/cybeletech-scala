@@ -1,13 +1,17 @@
-![Scala](https://img.shields.io/badge/scala-%23DC322F.svg?style=for-the-badge&logo=scala&logoColor=white)
+![Warning](https://img.shields.io/badge/%20-Uncompleted!-orange)
+![Scala](https://img.shields.io/badge/%20-scala-red)
+![SBT](https://img.shields.io/badge/%20-sbt-lightgray)
+
+# Cybeletech-scala
 
 # 1. Background
 
-This repository has been created following a request from cybeletech. Details are given in the [last chapter](#request).
+This repository has been created following a request from cybeletech. Details are given in the [third chapter](#request).
 The project is developped in `scala` and require `sbt` as package manager and build tool.
 
 # 2. Notes on Scala implementation
 
-## Code organization summary
+## 2.1 Code organization summary
 
 - Code fully implemented with functional style in scala (filter and count operations)
 - As Scala does no longer provide native implementation of json serialization, the spray-json library is used
@@ -18,23 +22,27 @@ The project is developped in `scala` and require `sbt` as package manager and bu
   * `PureScalaJsonOpsImpl`provides implementation of `JsonOps` based on pure scala, without additional library
 - For sake of clarity, attribute `people` is renamed into `peoples` in the Json example fragments
 
-## Run cybeletech-scala
+## 2.1 Run cybeletech-scala
 
-### Clone repository
+### 2.1.1 Clone repository
 
-### Install sbt
+![TODO](https://img.shields.io/badge/%20-TODO-red)
 
-### Compile then run
+### 2.1.2 Install sbt
+
+![TODO](https://img.shields.io/badge/%20-TODO-red)
+
+### 2.1.3 Compile then run
 ```shell script
 $ sbt clean compile
 ```
-Run filter
+Run filter: ![TODO](https://img.shields.io/badge/%20-TODO-red)
 ```shell script
-$ sbt run todo
+$ sbt run "..."
 ```
-Runt count:
+Runt count: ![TODO](https://img.shields.io/badge/%20-TODO-red)
 ```shell script
-$ sbt clean compile
+$ sbt run "..."
 ```
 
 ## Tests
@@ -50,7 +58,7 @@ $ sbt clean test
 ```shell script
 $ sbt clean coverage test
 ```
-- Print report
+- Print report:
 ```shell script
 $ sbt coverageReport
 ...
@@ -73,11 +81,15 @@ $ sbt scalastyle
 The project code leverages [scapegoat](https://github.com/scapegoat-scala/scapegoat) scala static code analyzer:
 ```shell script
 $ sbt scapegoat
+...
+[info] [info] [scapegoat] 118 activated inspections
+[info] [info] [scapegoat] Analysis complete: 13 files - 0 errors 0 warns 0 infos
+[info] [info] [scapegoat] Written HTML report [/Users/xavierthomas/Documents/dev/com.github.xvthomas/cybeletech-scala/target/scala-2.13/scapegoat-report/scapegoat.html]
+[info] [info] [scapegoat] Written XML report [/Users/xavierthomas/Documents/dev/com.github.xvthomas/cybeletech-scala/target/scala-2.13/scapegoat-report/scapegoat.xml]
+[info] [info] [scapegoat] Written Scalastyle XML report [/Users/xavierthomas/Documents/dev/com.github.xvthomas/cybeletech-scala/target/scala-2.13/scapegoat-report/scapegoat-scalastyle.xml]
+[info] [info] [scapegoat] Written Markdown report [/Users/xavierthomas/Documents/dev/com.github.xvthomas/cybeletech-scala/target/scala-2.13/scapegoat-report/scapegoat.md]
+[success] Total time: 7 s, completed 3 janv. 2023 à 19:59:08
 ```
-
-
-
-
 
 # <a name="request"></a> 3. Javascript backend developer test
 
