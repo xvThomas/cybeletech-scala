@@ -25,13 +25,13 @@
       "animals": {
         "type": "array",
         "items": {
-          "$ref": "#/$animals"
+          "$ref": "#/$animal"
         }
       }
     }
   },
 
-  "$animals": {
+  "$animal": {
     "type": "object",
     "properties": {
       "name": {
