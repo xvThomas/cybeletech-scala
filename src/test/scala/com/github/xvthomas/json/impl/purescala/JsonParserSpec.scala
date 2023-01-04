@@ -9,8 +9,12 @@ import org.scalatest.matchers.should
 
 import scala.annotation.tailrec
 
+// scalastyle:off multiple.string.literals
+// scalastyle:off magic.number
+// scalastyle:off named.argument
 class JsonParserSpec extends AnyFlatSpec with EitherValues with should.Matchers {
 
+  // scalastyle:off regex
   @tailrec
   final private def parse(input: String): Unit = {
     val res = JsonTokenParser.nextToken(input)

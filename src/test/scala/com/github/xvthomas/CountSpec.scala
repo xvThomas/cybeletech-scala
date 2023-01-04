@@ -7,16 +7,16 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should
 import org.scalatest.{OptionValues, TryValues}
 
+// scalastyle:off multiple.string.literals
+// scalastyle:off magic.number
+// scalastyle:off named.argument
 class CountSpec extends AnyFlatSpec with TryValues with OptionValues with should.Matchers {
 
-  val jsonOps: JsonOps = /*new SprayJsonOpsImpl()*/ new PureScalaJsonOpsImpl()
+  val jsonOps: JsonOps = /* new SprayJsonOpsImpl() */ new PureScalaJsonOpsImpl()
 
   "Counting empty array" should "be not returned" in {
     val root = jsonOps.parse(Fixtures.emptyRoot)
-    println(jsonOps.parse(Fixtures.emptyRoot))
     root.success.value should be(List[NamedPeoples]())
-    println(ProcessOps.count(root.get))
-    println(JsonPrinter.prettyPrint(JsonArray(List.empty)))
     jsonOps.prettyPrint(ProcessOps.count(root.get)) should be("")
   }
 

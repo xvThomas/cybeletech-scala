@@ -8,6 +8,9 @@ import org.scalatest.{EitherValues, TryValues}
 
 import scala.util.{Failure, Success}
 
+// scalastyle:off multiple.string.literals
+// scalastyle:off magic.number
+// scalastyle:off named.argument
 class PureScalaJsonOpsSpec extends AnyFlatSpec with EitherValues with TryValues with should.Matchers {
   val jsonOps: PureScalaJsonOpsImpl = new PureScalaJsonOpsImpl()
 
@@ -74,9 +77,9 @@ class PureScalaJsonOpsSpec extends AnyFlatSpec with EitherValues with TryValues 
 
   "parsed and printed specExample" should "have the same internal representation than specExample" in {
     jsonOps.parse(Fixtures.specExample) match {
-      case Failure(_) => fail()
+      case Failure(_)     => fail()
       case Success(value) =>
-        println(jsonOps.prettyPrint(value))
+        // println(jsonOps.prettyPrint(value))
         jsonOps.parse(jsonOps.prettyPrint(value)) should be(jsonOps.parse(Fixtures.specExample))
     }
   }

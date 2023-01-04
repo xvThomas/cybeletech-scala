@@ -7,6 +7,9 @@ import org.scalatest.TryValues
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should
 
+// scalastyle:off multiple.string.literals
+// scalastyle:off magic.number
+// scalastyle:off named.argument
 class FilterSpec extends AnyFlatSpec with TryValues with should.Matchers {
 
   val jsonOps: JsonOps = new SprayJsonOpsImpl()
