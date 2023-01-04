@@ -1,8 +1,6 @@
 [![Scala CI](https://github.com/xvThomas/cybeletech-scala/actions/workflows/scala.yml/badge.svg)](https://github.com/xvThomas/cybeletech-scala/actions/workflows/scala.yml)
-
-![Warning](https://img.shields.io/badge/%20-Uncompleted!-orange)
-![Scala](https://img.shields.io/badge/%20-scala-red)
-![SBT](https://img.shields.io/badge/%20-sbt-lightgray)
+![Scala](https://img.shields.io/badge/scala-2.13.8-red)
+![SBT](https://img.shields.io/badge/sbt-1.8.1-lightgray)
 
 # Cybeletech-scala
 
