@@ -13,26 +13,31 @@ The project is developped in `scala` and require `sbt` as package manager and bu
 
 ## 2.1 Code organization summary
 
-- Code fully implemented with functional style in scala (filter and count operations)
+- Code fully implemented with functional style in scala (filter and count operations implemented in [ProcessOps.scala](src/main/scala/com/github/xvthomas/ProcessOps.scala))
 - As Scala does no longer provide native implementation of json serialization, the spray-json library is used
 - However, to fulfill the test requirements an alternate implementation is provided in pure scala. 
-- Selection of implementation (native or spray-json based) is made by using IoC pattern
-  * `JsonOps` is an interface which declare `parse` and `prettyPrint` functions
-  * `SprayJsonOpsImpl` provides implementation of `JsonOps` based on the additional library spray-json
-  * `PureScalaJsonOpsImpl`provides implementation of `JsonOps` based on pure scala, without additional library
-- For sake of clarity, attribute `people` is renamed into `peoples` in the Json example fragments
+- Selection of implementation (native or spray-json based) is made by using IoC pattern:
+  * [JsonOps](src/main/scala/com/github/xvthomas/json/JsonOps.scala) is an interface which declare `parse` and `prettyPrint` functions
+  * [SprayJsonOpsImpl](src/main/scala/com/github/xvthomas/json/impl/spray/SprayJsonOpsImpl.scala) provides implementation of `JsonOps` based on the additional library spray-json
+  * [PureScalaJsonOpsImpl](src/main/scala/com/github/xvthomas/json/impl/purescala/PureScalaJsonOpsImpl.scala) provides implementation of `JsonOps` based on pure scala, without additional library. Notice also that JsonNumber is not implemented because not necessary in this context.
+- For sake of clarity, attribute `people` is renamed into `peoples` in the Json example fragments.
 
-## 2.1 Run cybeletech-scala
+## 2.2 Run cybeletech-scala
 
-### 2.1.1 Clone repository
+### 2.2.1 Clone repository
 
-![TODO](https://img.shields.io/badge/%20-TODO-red)
+```shell script
+git clone https://github.com/xvThomas/cybeletech-scala.git
+```
 
-### 2.1.2 Install sbt
+### 2.2.2 Install sbt
 
-![TODO](https://img.shields.io/badge/%20-TODO-red)
+Depending on your OS, the installation can differs, see [instructions here](https://www.scala-sbt.org/download.html).
 
-### 2.1.3 Compile then run
+### 2.2.3 Compile then run
+
+The following shell commands must be run in the **root project directory**.
+
 ```shell script
 $ sbt clean compile
 ```
@@ -45,15 +50,15 @@ Runt count: ![TODO](https://img.shields.io/badge/%20-TODO-red)
 $ sbt run "..."
 ```
 
-## Tests
+## 2.3 Tests
 
-### Simple tests
+### 2.3.1 Simple tests
 To start unit tests, run:
 ```shell script
 $ sbt clean test
 ```
 
-### Tests with coverage
+### 2.3.2 Tests with coverage
 - Run tests:
 ```shell script
 $ sbt clean coverage test
@@ -69,15 +74,15 @@ $ sbt coverageReport
 [success] Total time: 2 s, completed 3 janv. 2023 à 19:25:51
 ```
 
-## Linters
+## 2.4 Code quality
 
-### Code style
+### 2.4.1 Code style
 This project use [scalastyle](http://www.scalastyle.org) as scala code syntax checker:
 ```shell script
 $ sbt scalastyle
 ```
 
-### Code analyzer
+### 2.4.2 Code analyzer
 The project code leverages [scapegoat](https://github.com/scapegoat-scala/scapegoat) scala static code analyzer:
 ```shell script
 $ sbt scapegoat
