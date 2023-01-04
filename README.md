@@ -17,7 +17,7 @@ So far no binary package is provided (fat jar, docker image, etc.)
 - Code fully implemented with functional style in scala. **Filter** and **Count** operations are implemented in [ProcessOps.scala](src/main/scala/com/github/xvthomas/ProcessOps.scala).
 - As Scala does no longer provide native implementation of json serialization, the spray-json library is used.
 - **However**, to fulfill the test requirements an **alternate** implementation is provided in **pure scala**. 
-- Selection of implementation (native or spray-json based) is made by using IoC pattern:
+- Selection of implementation (pure or spray-json based) is made by using IoC pattern:
   * [JsonOps](src/main/scala/com/github/xvthomas/json/JsonOps.scala) is an interface which declare `parse` and `prettyPrint` functions.
   * [SprayJsonOpsImpl](src/main/scala/com/github/xvthomas/json/impl/spray/SprayJsonOpsImpl.scala) provides implementation of `JsonOps` based on the additional [spray-json](https://github.com/spray/spray-json) library.
   * [PureScalaJsonOpsImpl](src/main/scala/com/github/xvthomas/json/impl/purescala/PureScalaJsonOpsImpl.scala) provides implementation of `JsonOps` based on pure scala, without additional library.
@@ -25,8 +25,8 @@ So far no binary package is provided (fat jar, docker image, etc.)
 
 ### 2.1.2 Json schema
 
-Starting from the gven json fragments, the following json schema is considered:
-(For sake of clarity, **attribute `people` is renamed into `peoples`** in the Json example fragments).
+Starting from the given json fragments, the following json schema is considered:
+(For sake of clarity, **attribute `people` is renamed into `peoples`**).
 ```json
 {
   "$name" : { "type": "string"},
@@ -97,7 +97,10 @@ object   ::= "{" [members] "}"
 elements ::= value | value "," elements
 array    ::= "[" [elements] "]"
 ```
-Notice that `Number` is not implemented because not necessary in this context.
+- Notice that `Number` is not implemented because not necessary in this context.
+- During parsing, the json string is interpreted as Json Abstract Syntax Tree, then converted into the model scala classes (straightforward with spray-json),.
+- Filter and Count Operations use the model scala class tree as input.
+- Operations output is represented using the model scala class tree, then converted into json string.
 
 ## 2.2 Run cybeletech-scala
 
@@ -113,7 +116,8 @@ Depending on your OS, the installation can differs, see [instructions here](http
 
 ### 2.2.3 Compile then run
 
-The following shell commands must be run in the **root project directory**.
+The following shell commands must be executed in the **root project directory**.
+Java SDK or JDK must be available on the running host (tested with java version 11.0.9.1)
 
 ```shell script
 $ sbt clean compile
