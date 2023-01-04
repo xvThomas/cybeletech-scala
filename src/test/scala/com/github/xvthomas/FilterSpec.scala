@@ -39,7 +39,6 @@ class FilterSpec extends AnyFlatSpec with TryValues with should.Matchers {
   "Filtering with pattern (Dory)" should "produce an empty list" in {
     val pattern = "Doe"
     val root    = jsonOps.parse(Fixtures.specExample)
-    // println(FilterOps.filter("Doe", input.get))
     ProcessOps.filter(pattern, root.get) should be(List())
   }
 
