@@ -6,7 +6,11 @@ package com.github.xvthomas.json.impl.purescala
 object JsonPrinter {
   private def print(jsonValue: JsonValue, space: Int): String = {
 
-    def printMember(key: String, value: JsonValue, indent: Int) = s"""${spaces(indent)}"$key": ${printValue(value, indent)}"""
+    def printMember(key: String, value: JsonValue, indent: Int) =
+      value match {
+        case JsonNull => ""
+        case _        => s"""${spaces(indent)}"$key": ${printValue(value, indent)}"""
+      }
 
     def inc(indent: Int): Int       = indent + space
     def newline: String             = if (space > 0) "\n" else " "
