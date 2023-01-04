@@ -2,8 +2,10 @@ package com.github.xvthomas.json.impl.purescala
 
 import scala.util.matching.Regex
 
+/**
+ *  Lexical analysis terminals definition
+ */
 sealed trait JsonToken
-
 private[purescala] case object JsonToken {
   final case class StringValue(value: String) extends JsonToken
 
@@ -26,7 +28,10 @@ private[purescala] case object JsonToken {
 
 private[purescala] final case class NextToken(jsonToken: JsonToken, continuation: String)
 
-private[purescala] final case object JsonTokenParser {
+/**
+ *  Lexical analysis for json string based on pattern matching
+ */
+private[purescala] case object JsonTokenParser {
 
   private val whiteSpaceRegex: Regex   = "[ \t\r\n\f]+".r
   private val leftBracketRegex: Regex  = """\[""".r

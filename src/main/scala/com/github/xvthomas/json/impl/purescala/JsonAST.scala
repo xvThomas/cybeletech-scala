@@ -1,5 +1,8 @@
 package com.github.xvthomas.json.impl.purescala
 
+/**
+ *  Json Abstract Syntax Tree definition
+ */
 sealed trait JsonAST
 final case class Member(string: String, value: JsonValue) extends JsonAST
 final case class Key(string: String)                      extends JsonAST

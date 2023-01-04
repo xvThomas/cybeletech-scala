@@ -5,6 +5,9 @@ import com.github.xvthomas.model.{Animal, NamedPeoples, People}
 
 import scala.util.{Failure, Success, Try}
 
+/**
+ *  Pure scala Implementation of JsonOps
+ */
 class PureScalaJsonOpsImpl extends JsonOps {
 
   private val nameKey    = "name"

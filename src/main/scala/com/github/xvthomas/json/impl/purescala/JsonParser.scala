@@ -2,6 +2,9 @@ package com.github.xvthomas.json.impl.purescala
 
 import com.github.xvthomas.json.impl.purescala.JsonParserError.{NumberNotImplemented, UnexpectedToken}
 
+/**
+ *  Syntax analyzer for Json string
+ */
 object JsonParser {
 
   type Continuation = String

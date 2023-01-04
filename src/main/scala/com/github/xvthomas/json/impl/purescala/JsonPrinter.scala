@@ -1,7 +1,10 @@
 package com.github.xvthomas.json.impl.purescala
 
+/**
+ *  JsonValue to String printer and pretty printer
+ */
 object JsonPrinter {
-  private def print(jsonValue: JsonValue, space: Int = 0): String = {
+  private def print(jsonValue: JsonValue, space: Int): String = {
 
     def printMember(key: String, value: JsonValue, indent: Int) = s"""${spaces(indent)}"$key": ${printValue(value, indent)}"""
 
@@ -22,7 +25,18 @@ object JsonPrinter {
     printValue(jsonValue, indent = 0)
   }
 
+  /**
+   *  Pretty printer
+   *  @param jsonValue a JsonValue
+   *  @param space number of white space in indentation
+   *  @return a json string formatted
+   */
   def prettyPrint(jsonValue: JsonValue, space: Int = 2): String = print(jsonValue, space)
 
-  def print(jsonValue: JsonValue): String = print(jsonValue)
+  /**
+   *  Printer
+   *  @param jsonValue a JsonValue
+   *  @return a json string formatted
+   */
+  def print(jsonValue: JsonValue): String = print(jsonValue, space = 0)
 }
