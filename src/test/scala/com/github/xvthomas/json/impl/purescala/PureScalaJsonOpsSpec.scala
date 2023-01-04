@@ -2,9 +2,9 @@ package com.github.xvthomas.json.impl.purescala
 
 import com.github.xvthomas.Fixtures
 import com.github.xvthomas.model.{Animal, NamedPeoples, People}
-import org.scalatest.{EitherValues, TryValues}
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should
+import org.scalatest.{EitherValues, TryValues}
 
 import scala.util.{Failure, Success}
 

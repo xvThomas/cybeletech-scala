@@ -1,8 +1,8 @@
 package com.github.xvthomas
 
+import com.github.xvthomas.json.JsonOps
 import com.github.xvthomas.json.impl.spray.SprayJsonOpsImpl
 import com.github.xvthomas.model._
-import json.JsonOps
 import org.scalatest.TryValues
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should

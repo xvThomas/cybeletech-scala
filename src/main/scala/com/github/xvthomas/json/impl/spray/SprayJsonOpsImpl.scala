@@ -2,9 +2,9 @@ package com.github.xvthomas.json.impl.spray
 
 import com.github.xvthomas.json.JsonOps
 import com.github.xvthomas.model._
+import spray.json._
 
 import scala.util.Try
-import spray.json._
 
 /**
  *  Implementation of JsonOps with spray-json

@@ -1,7 +1,5 @@
 package com.github.xvthomas.json.impl.purescala
 
-import scala.collection.mutable.ListBuffer
-
 sealed trait JsonAST
 final case class Member(string: String, value: JsonValue) extends JsonAST
 final case class Key(string: String)                      extends JsonAST
