@@ -97,8 +97,8 @@ object   ::= "{" [members] "}"
 elements ::= value | value "," elements
 array    ::= "[" [elements] "]"
 ```
-- Notice that `Number` is not implemented because not necessary in this context.
-- During parsing, the json string is interpreted as Json Abstract Syntax Tree, then converted into the model scala classes (straightforward with spray-json),.
+- Notice that `Number` is not implemented since not required in this context.
+- During parsing, the json string is interpreted as Json Abstract Syntax Tree, then converted into the model scala classes (straightforward with spray-json).
 - Filter and Count Operations use the model scala class tree as input.
 - Operations output is represented using the model scala class tree, then converted into json string.
 
@@ -122,13 +122,29 @@ Java SDK or JDK must be available on the running host (tested with java version 
 ```shell script
 $ sbt clean compile
 ```
-Run filter: ![TODO](https://img.shields.io/badge/%20-TODO-red)
+- Usage (type the following command):
 ```shell script
-$ sbt run "..."
+$ sbt run
+...
+Usage: run [filter | count] file
+
+Filter command:
+--filter="<pattern>"   filter json file using a pattern
+count command:
+--count                count animals
+
+Examples:
+$ sbt "run --filter=\"ry\" ./doc/data.json"
+$ sbt "run --count ./doc/data.json"
 ```
-Runt count: ![TODO](https://img.shields.io/badge/%20-TODO-red)
+
+Run filter:
 ```shell script
-$ sbt run "..."
+$ sbt "run --filter=\"<pattern>\" <file>
+```
+Run count:
+```shell script
+$ sbt "run --count <file>
 ```
 
 ## 2.3 Tests

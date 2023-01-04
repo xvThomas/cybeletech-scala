@@ -86,12 +86,12 @@ object Main {
   def showHelp(): Unit = {
     println("Usage: run [filter | count] file")
     println()
-    println("filter command:")
+    println("Filter command:")
     println("  --filter=\"<pattern>\"   filter json file using a pattern")
     println("count command:")
     println("  --count                count animals")
     println()
-    println("examples:")
+    println("Examples:")
     println("""  $ sbt "run --filter=\"ry\" ./doc/data.json"""")
     println("""  $ sbt "run --count ./doc/data.json"""")
   }
