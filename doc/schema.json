@@ -1,0 +1,45 @@
+{
+  "$name" : { "type": "string"},
+
+  "$namedPeoples": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "$ref": "#/$name"
+      },
+      "peoples": {
+        "type": "array",
+        "items": {
+          "$ref": "#/$people"
+        }
+      }
+    }
+  },
+
+  "$people": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "$ref": "#/$name"
+      },
+      "animals": {
+        "type": "array",
+        "items": {
+          "$ref": "#/$animals"
+        }
+      }
+    }
+  },
+
+  "$animals": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "$ref": "#/$name"
+      }
+    }
+  },
+
+  "type": "array",
+  "items": { "$ref":  "#/$namedPeoples" }
+}
