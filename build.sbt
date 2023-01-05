@@ -7,7 +7,8 @@ lazy val root = (project in file("."))
   .settings(
     name := "cybeletech-scala",
     libraryDependencies ++= Seq(
-      "io.spray"      %% "spray-json" % "1.3.6",
-      "org.scalatest" %% "scalatest"  % "3.2.14" % Test
+      "io.spray"            %% "spray-json"   % "1.3.6",
+      "org.scalatest"       %% "scalatest"    % "3.2.14"  % Test,
+      "com.vladsch.flexmark" % "flexmark-all" % "0.35.10" % Test
     )
   )

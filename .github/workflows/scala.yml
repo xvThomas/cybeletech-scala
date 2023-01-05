@@ -29,4 +29,7 @@ jobs:
         cache: 'sbt'
     - name: Run tests
       run: sbt test
+    - name: run tests with coverage and reports
+      uses: /NikoBergemann/action-sbt-test-report@v3
+
 
