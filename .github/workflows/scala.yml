@@ -41,6 +41,9 @@ jobs:
         # see: https://frontside.com/blog/2020-05-26-github-actions-pull_request/#how-does-pull_request-affect-actionscheckout
         ref: ${{ github.event.pull_request.head.sha }}
 
+    - name: Run scalastyle
+      run: sbt scalastyle
+
     - name: Run scapegoat
       run: sbt scapegoat
 
