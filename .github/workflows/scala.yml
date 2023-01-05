@@ -45,11 +45,10 @@ jobs:
       run: sbt clean coverage test
 
     - name: Upload coverage data to Coveralls
-      run: |
-        echo $COVERALLS_REPO_TOKEN | sed 's/./& /g'
+      run:
         sbt coverageReport coveralls
       env:
-        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }} # "ehYr9j0Y39tqVHRN7NPM7DAjUHsavqXcb" # ${{ secrets.GITHUB_TOKEN }}
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
 
 
 
