@@ -12,5 +12,3 @@ lazy val root = (project in file("."))
       "com.vladsch.flexmark" % "flexmark-all" % "0.35.10" % Test
     )
   )
-
-coverageDataDir := file(".") / "scoverage"
