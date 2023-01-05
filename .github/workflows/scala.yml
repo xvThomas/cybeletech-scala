@@ -28,6 +28,6 @@ jobs:
         distribution: 'temurin'
         cache: 'sbt'
     - name: run tests with coverage and reports
-      uses: sbt coverage +test +coverageReport +coveralls
+      run: sbt coverage +test +coverageReport +coveralls
 
 
