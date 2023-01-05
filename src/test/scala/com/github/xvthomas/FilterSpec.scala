@@ -16,7 +16,7 @@ class FilterSpec extends AnyFlatSpec with TryValues with should.Matchers {
 
   "The spec test with pattern (ry)" should "succeed with results" in {
     val pattern = "ry"
-    val input   = jsonOps.parse(Fixtures.specExample)
+    val input   = jsonOps.parse(Fixtures.SpecExample)
     input should be a Symbol("success")
 
     ProcessOps.filter(pattern, input.get) should be(
@@ -29,7 +29,7 @@ class FilterSpec extends AnyFlatSpec with TryValues with should.Matchers {
 
   "Filtering with pattern (Dory)" should "succeed with results" in {
     val pattern = "Dory"
-    val input   = jsonOps.parse(Fixtures.specExample)
+    val input   = jsonOps.parse(Fixtures.SpecExample)
     input should be a Symbol("success")
     ProcessOps.filter(pattern, input.get) should be(
       List(NamedPeoples(Some("Uzuzozne"), Some(List(People(Some("Lillie Abbott"), Some(List(Animal(Some("John Dory")))))))))
@@ -38,13 +38,13 @@ class FilterSpec extends AnyFlatSpec with TryValues with should.Matchers {
 
   "Filtering with pattern (Dory)" should "produce an empty list" in {
     val pattern = "Doe"
-    val root    = jsonOps.parse(Fixtures.specExample)
+    val root    = jsonOps.parse(Fixtures.SpecExample)
     ProcessOps.filter(pattern, root.get) should be(List())
   }
 
   "Filtering with pattern (row)" should "succeed with results" in {
     val pattern = "row"
-    val root    = jsonOps.parse(Fixtures.specExample)
+    val root    = jsonOps.parse(Fixtures.SpecExample)
     ProcessOps.filter(pattern, root.get) should be(List(NamedPeoples(
       Some("Dillauti"),
       Some(List(
@@ -56,7 +56,7 @@ class FilterSpec extends AnyFlatSpec with TryValues with should.Matchers {
 
   "Empty filtered array" should "be not returned" in {
     val pattern = "Doe"
-    val root    = jsonOps.parse(Fixtures.specExample)
+    val root    = jsonOps.parse(Fixtures.SpecExample)
     root should be a Symbol("success")
     jsonOps.prettyPrint(ProcessOps.filter(pattern, root.get)) should be("")
   }

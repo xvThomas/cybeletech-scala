@@ -28,7 +28,7 @@ class JsonParserSpec extends AnyFlatSpec with EitherValues with should.Matchers 
 
   "specExample" should "be correctly parsed" in {
     // parse(Fixtures.specExample)
-    JsonParser.parse(Fixtures.specExample) should be a Symbol("Right")
+    JsonParser.parse(Fixtures.SpecExample) should be a Symbol("Right")
   }
 
   "member string" should "be correctly parsed" in {

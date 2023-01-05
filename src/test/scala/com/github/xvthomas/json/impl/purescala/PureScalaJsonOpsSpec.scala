@@ -15,7 +15,7 @@ class PureScalaJsonOpsSpec extends AnyFlatSpec with EitherValues with TryValues 
   val jsonOps: PureScalaJsonOpsImpl = new PureScalaJsonOpsImpl()
 
   "specExample" should "be correctly converted to List[NamedPeoples]" in {
-    jsonOps.parse(Fixtures.specExample).success.value should be(List(
+    jsonOps.parse(Fixtures.SpecExample).success.value should be(List(
       NamedPeoples(Some("Uzuzozne"), Some(List(People(Some("Lillie Abbott"), Some(List(Animal(Some("John Dory")))))))),
       NamedPeoples(Some("Satanwi"), Some(List(People(Some("Anthony Bruno"), Some(List(Animal(Some("Oryx")))))))),
       NamedPeoples(
@@ -76,11 +76,11 @@ class PureScalaJsonOpsSpec extends AnyFlatSpec with EitherValues with TryValues 
   }
 
   "parsed and printed specExample" should "have the same internal representation than specExample" in {
-    jsonOps.parse(Fixtures.specExample) match {
+    jsonOps.parse(Fixtures.SpecExample) match {
       case Failure(_)     => fail()
       case Success(value) =>
         // println(jsonOps.prettyPrint(value))
-        jsonOps.parse(jsonOps.prettyPrint(value)) should be(jsonOps.parse(Fixtures.specExample))
+        jsonOps.parse(jsonOps.prettyPrint(value)) should be(jsonOps.parse(Fixtures.SpecExample))
     }
   }
 }

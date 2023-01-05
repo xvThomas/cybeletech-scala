@@ -15,13 +15,13 @@ class CountSpec extends AnyFlatSpec with TryValues with OptionValues with should
   val jsonOps: JsonOps = /* new SprayJsonOpsImpl() */ new PureScalaJsonOpsImpl()
 
   "Counting empty array" should "be not returned" in {
-    val root = jsonOps.parse(Fixtures.emptyRoot)
+    val root = jsonOps.parse(Fixtures.EmptyRoot)
     root.success.value should be(List[NamedPeoples]())
     jsonOps.prettyPrint(ProcessOps.count(root.get)) should be("")
   }
 
   "Counting root with no animals" should "produce names with count equals to 0" in {
-    val root = jsonOps.parse(Fixtures.noAnimals)
+    val root = jsonOps.parse(Fixtures.NoAnimals)
     root should be a Symbol("success")
     val res = ProcessOps.count(root.get)
     res.head.name.value should be("Uzuzozne [0]")
@@ -34,7 +34,7 @@ class CountSpec extends AnyFlatSpec with TryValues with OptionValues with should
   }
 
   "Counting spec example root" should "produce names with expected count" in {
-    val root = jsonOps.parse(Fixtures.specExample)
+    val root = jsonOps.parse(Fixtures.SpecExample)
     root should be a Symbol("success")
     val res = ProcessOps.count(root.get)
     res.head.name.value should be("Uzuzozne [1]")

@@ -4,7 +4,7 @@ object Fixtures {
 
   // for sake of clarity, attribute "people" is renamed to "peoples"
 
-  val specExample: String = """[
+  val SpecExample: String = """[
                               |  {
                               |    "name": "Uzuzozne",
                               |    "peoples": [
@@ -90,7 +90,7 @@ object Fixtures {
                               |  }
                               |]""".stripMargin.filter(_ >= ' ')
 
-  val noAnimals: String = """[
+  val NoAnimals: String = """[
                               |  {
                               |    "name": "Uzuzozne",
                               |    "peoples": [
@@ -128,6 +128,6 @@ object Fixtures {
                               |  }
                               |]""".stripMargin.filter(_ >= ' ')
 
-  val emptyRoot: String = """[
+  val EmptyRoot: String = """[
                             |]""".stripMargin.filter(_ >= ' ')
 }
