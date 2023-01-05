@@ -27,9 +27,7 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: 'sbt'
-    - name: Run tests
-      run: sbt test
     - name: run tests with coverage and reports
-      uses: /NikoBergemann/action-sbt-test-report@v3
+      uses: sbt coverage +test +coverageReport +coveralls
 
 
