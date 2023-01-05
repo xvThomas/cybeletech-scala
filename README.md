@@ -1,4 +1,5 @@
 [![Scala CI](https://github.com/xvThomas/cybeletech-scala/actions/workflows/scala.yml/badge.svg)](https://github.com/xvThomas/cybeletech-scala/actions/workflows/scala.yml)
+[![Coverage Status](https://coveralls.io/repos/github/xvThomas/cybeletech-scala/badge.svg?branch=master)](https://coveralls.io/github/xvThomas/cybeletech-scala?branch=master)
 ![Scala](https://img.shields.io/badge/scala-2.13.8-red)
 ![SBT](https://img.shields.io/badge/sbt-1.8.0-lightgray)
 
