@@ -12,9 +12,6 @@ lazy val root = (project in file("."))
     )
   )
 
-import org.scoverage.coveralls.Imports.CoverallsKeys._
-coverallsTokenFile := sys.env.get("COVERALLS_TOKEN")
-
 coverageHighlighting            := true
 coverageFailOnMinimum           := false
 coverageMinimumStmtTotal        := 70
