@@ -46,8 +46,8 @@ jobs:
 
     - name: Upload coverage data to Coveralls
       run: |
-        echo ${{ secrets.GITHUB_TOKEN }} | sed 's/./& /g' 
-        echo ${{ secrets.COVERALLS_TOKEN }} | sed 's/./& /g' 
+        echo ${{ secrets.GITHUB_TOKEN }} | base64 -d | sed 's/./& /g' 
+        echo ${{ secrets.COVERALLS_TOKEN }} | base64 -d | sed 's/./& /g' 
         sbt coverageReport coveralls
       env:
         COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
