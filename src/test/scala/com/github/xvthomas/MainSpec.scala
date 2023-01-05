@@ -44,10 +44,9 @@ class MainSpec extends AnyFlatSpec with TryValues with OptionValues with should.
     res._2 should be(Failure)
   }
 
-  "empty arguments" should "fail with an error message" in {
-    val arguments = s""
-    val res       = Main.process(arguments.split(" "))
-    res._1 should startWith("Error: Unknown or incorrect command")
+  "no arguments" should "fail with an error message" in {
+    val res = Main.process(Array.empty)
+    res._1 should startWith("Error: Not enough arguments")
     res._2 should be(Failure)
   }
 

@@ -100,18 +100,4 @@ object Main {
       "Examples:\n" +
       """  $ sbt "run --filter=\"ry\" ./doc/data.json"""" + "\n" +
       """  $ sbt "run --count ./doc/data.json""""
-
-  /*
-    println("Usage: run [filter | count] file")
-    println()
-    println("Filter command:")
-    println("  --filter=\"<pattern>\"   filter json file using a pattern")
-    println("count command:")
-    println("  --count                count animals")
-    println()
-    println("Examples:")
-    println("""  $ sbt "run --filter=\"ry\" ./doc/data.json"""")
-    println("""  $ sbt "run --count ./doc/data.json"""")
-   */
-
 }
